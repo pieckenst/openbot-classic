@@ -1,4 +1,4 @@
-# openbothost
+# openbot-classic
 
 Discord.py Version: 1.2.5
 
