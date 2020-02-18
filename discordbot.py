@@ -77,7 +77,7 @@ async def wiki(ctx):
 
 @help.command(pass_context=True)
 async def infosystem(ctx):
-    infemb=discord.Embed(title="OpenBot. Модуль ИнфоСистемы.", description="Commands for obtaining information about the user, server, etc..", color=0x1f8100)
+    infemb=discord.Embed(title="OpenBot. InfoSystem Module.", description="Commands for obtaining information about the user, server, etc..", color=0x1f8100)
     infemb.add_field(name="neofetch [user]", value="User Information", inline=False)
     infemb.add_field(name="guild ", value="Server Information", inline=False)
     infemb.add_field(name="voicedemo [VoiceChannel]", value="Getting a screen sharing link for a voice chat", inline=False)
@@ -139,4 +139,4 @@ if __name__ == '__main__':
             raise e
 
 
-bot.run("tokenvash") # Токен бота для запуска
+bot.run("NjcxNjEyMDc5MTA2NDI0ODYy.XkvlJg.jPCtrXcoUMCKzoGyupl4qQ4yGi8") # Токен бота для запуска

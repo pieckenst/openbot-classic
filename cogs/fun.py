@@ -26,6 +26,11 @@ class fun(commands.Cog):
        except discord.errors.Forbidden:
           embed=discord.Embed(title="🔴 Error", description="I need the ``Manage Nicknames`` permission to do this.", color=0xdd2e44,)
           await ctx.send(embed=embed)
+
+    @commands.command()
+    async def ping(self, ctx):
+        for pings in range(4):
+            await ctx.send("bot: Ping, pong")      
           
             
    
