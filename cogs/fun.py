@@ -1,29 +1,35 @@
 import discord
 import asyncio
 from discord.ext import commands
+from scripts import blacklist
 
 class fun(commands.Cog):
     def __init__(self,bot):
         self.bot = bot
 
-    @commands.command(pass_context=True)
-    async def echo(self, ctx,*, arg):
-       # await ctx.send(arg)
-       await ctx.send("bot: The Command Is Currently Disabled")
-
-
     @commands.command()
-    async def ping(self, ctx):
-        for pings in range(4):
-            await ctx.send("bot: Ping , Pong")
+    async def echo(self, ctx, *, content):
+        if blacklist.list in content:
+            return await ctx.send("blacklist-warn: Please Dont use everyone or here")
+        else:    
+            return await ctx.send(content)
+
+    @commands.command(pass_context=True , aliases=['name', 'set_name', 'prozvische'])
+    async def setname(self, ctx, member: discord.Member, *, nickname=None):
+       try:
+          '''
+          Change user's nickname
+          '''
+          await member.edit(nick=nickname)
+          await ctx.message.delete()
+          
+       except discord.errors.Forbidden:
+          embed=discord.Embed(title="🔴 Error", description="I need the ``Manage Nicknames`` permission to do this.", color=0xdd2e44,)
+          await ctx.send(embed=embed)
+          
             
-    @commands.command()
-    async def rofl(self, ctx):
-       
-       await ctx.send("https://cdn.discordapp.com/attachments/436101759425970176/620351786401792000/1566800609.jpg")
+   
 
-    
-    
 
 
 
