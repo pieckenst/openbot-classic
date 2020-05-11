@@ -139,4 +139,4 @@ if __name__ == '__main__':
             raise e
 
 
-bot.run("NjcxNjEyMDc5MTA2NDI0ODYy.XkvlJg.jPCtrXcoUMCKzoGyupl4qQ4yGi8") # Токен бота для запуска
+bot.run("хой бля") # Токен бота для запуска
