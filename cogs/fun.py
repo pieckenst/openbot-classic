@@ -29,7 +29,7 @@ class fun(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        for pings in range(4):
+        for _ in range(4):
             await ctx.send("bot: Ping, pong")      
           
             
